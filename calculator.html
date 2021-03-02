@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="./calculator.css" />
+  </head>
+  <body>
+    <form id="calc-form" onsubmit="return false">
+      <h1>Simple Calculator</h1>
+      <div>
+        <div class="numbers">
+          <label for="firstNumber">first number</label><br />
+          <input type="text" id="firstNumber" autofocus="on" />
+        </div>
+        <div class="numbers">
+          <label for="secondNumber">second number</label><br />
+          <input type="text" id="secondNumber" />
+        </div>
+      </div>
+      <!-- Radio -->
+      <div class="math-operation">
+        <input type="radio" name="math-operation" id="add" value="add" /><span>Add</span>
+        <input type="radio" name="math-operation" id="subtract" value="subtract" /><span
+          >Subtract</span
+        >
+        <input type="radio" name="math-operation" id="multiply" value="multiply" /><span
+          >Multiply</span
+        >
+        <input type="radio" name="math-operation" id="divide" value="divide" /><span>Divide</span>
+      </div>
+      <button type="submit" class="btn" id="result-btn" onclick="compute()">=</button>
+      <button type="reset" class="btn" onclick="window.location.reload()">Clear</button>
+      <div id="output"></div>
+    </form>
+  </body>
+  <script src="calculator.js"></script>
+</html>
