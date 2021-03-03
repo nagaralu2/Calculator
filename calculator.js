@@ -1,13 +1,23 @@
 const compute = () => {
   let output = document.getElementById('output');
-  //validate numbers
+  //Read and validate numbers
   let fno = elementById('firstNumber');
   let sno = elementById('secondNumber');
+  if (isNaN(fno) || isNaN(sno)) {
+    output.innerHTML = '<h3>' + `please enter valid numbers as input` + '</h3>';
+    return;
+  }
 
   //read radio buttons
   // let radios = document.querySelectorAll('input[type="radio"]:checked');
   // let value = radios.length > 0 ? radios[0].value : null;
   let value = getCheckBoxes();
+
+  //Error Handling for Math Operations
+  if (value == 0) {
+    output.innerHTML = '<h3>' + `please select an option to compute` + '</h3>';
+    return;
+  }
 
   //Error Handling for Division
   if (value == 'divide' && sno == 0) {
@@ -24,7 +34,7 @@ const compute = () => {
 };
 
 const elementById = (id) => {
-  return parseFloat(document.getElementById(id).value);
+  return Number(document.getElementById(id).value);
 };
 
 const getCheckBoxes = () => {
@@ -32,6 +42,7 @@ const getCheckBoxes = () => {
   for (let i = 0; i < radios.length; i++) {
     if (radios[i].checked) return radios[i].value;
   }
+  return 0;
 };
 
 const mathOperation = (fno, value, sno) => {

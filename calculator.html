@@ -21,18 +21,16 @@
         </div>
       </div>
       <!-- Radio -->
-      <div class="math-operation">
-        <input type="radio" name="math-operation" id="add" value="add" /><span>Add</span>
-        <input type="radio" name="math-operation" id="subtract" value="subtract" /><span
-          >Subtract</span
-        >
-        <input type="radio" name="math-operation" id="multiply" value="multiply" /><span
-          >Multiply</span
-        >
-        <input type="radio" name="math-operation" id="divide" value="divide" /><span>Divide</span>
+      <div class="math-div">
+        <input type="radio" name="math-operation" value="add" /><span>Add</span>
+        <input type="radio" name="math-operation" value="subtract" /><span>Subtract</span>
+        <input type="radio" name="math-operation" value="multiply" /><span>Multiply</span>
+        <input type="radio" name="math-operation" value="divide" /><span>Divide</span>
       </div>
-      <button type="submit" class="btn" id="result-btn" onclick="compute()">=</button>
-      <button type="reset" class="btn" onclick="window.location.reload()">Clear</button>
+      <div class="btn-div">
+        <button type="submit" class="btn" id="result-btn" onclick="compute()">=</button>
+        <button type="reset" class="btn" onclick="window.location.reload()">Clear</button>
+      </div>
       <div id="output"></div>
     </form>
   </body>
